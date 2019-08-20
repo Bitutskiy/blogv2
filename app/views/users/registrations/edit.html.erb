@@ -15,12 +15,7 @@
 
   <div class="field">
     <%= f.label :subscribtion %><br />
-    <%= radio_button_tag(:subscribtion, "Weekly") %>
-    <%= label_tag(:subscribtion_week, "Send me digest evry week") %>
-    <%= radio_button_tag(:subscribtion, "Dayly") %>
-    <%= label_tag(:subscribtion_day, "Send me digest evry day") %>
-    <%= radio_button_tag(:subscribtion, "Without") %>
-    <%= label_tag(:subscribtion_without, "Don't send me any message") %>
+    <%= f.select :subscribtion, ['weekly', 'dayly', 'without'] %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
