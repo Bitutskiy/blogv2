@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :subscribtion %><br />
-    <%= f.select :subscribtion, ['weekly', 'dayly', 'without'] %>
+    <%= f.select :subscribtion, ['weekly', 'daily', 'without'] %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
