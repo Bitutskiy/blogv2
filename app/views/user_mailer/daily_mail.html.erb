@@ -1,7 +1,13 @@
 <p><%= @user.email %></p>
 <h1> <%= @user.subscribtion %> </h1>
 
+<h1> Новинки за день </h1>
 <%= @posts.each do |post| %>
-  <br />
-     <td><%= post.title %></td>
+     <h4>
+       <%= users_url(host: "localhost:3000") %>
+       <%= link_to post do %>
+         <%= post.title %>
+       <% end %>
+     </h4>
+     <h5><%= post.body %></h5>
 <% end %>
