@@ -1,5 +1,5 @@
 h2
-  = t('.title', resource: resource.model_name.human)
+  = I18n.t(:profile)
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .filed
@@ -13,7 +13,9 @@ h2
   .field
     = f.label :subscribtion
     br
-    = f.select :subscribtion, ['weekly', 'daily', 'without']
+    = f.select :subscribtion, [[I18n.t("helpers.user.subscribtion.values.weekly", 'weekly')],
+                               [I18n.t("helpers.user.subscribtion.values.daily", 'daily')],
+                               [I18n.t("helpers.user.subscribtion.values.without", 'without')]]
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       | Currently waiting confirmation for:
@@ -21,7 +23,9 @@ h2
   .field
     = f.label :password
     i
-      | (leave blank if you don't want to change it)
+      |(
+      = I18n.t(:empty_blank)
+      |)
     br
     = f.password_field :password, autocomplete: "new-password"
     - if @minimum_password_length
@@ -35,14 +39,15 @@ h2
   .field
     = f.label :current_password
     i
-      | (we need your current password to confirm your changes)
+      |(
+      = I18n.t(:curr_pswd_confirm)
+      |)
     br
     = f.password_field :current_password, autocomplete: "current-password"
   .actions
-    = f.submit "Update"
+    = f.submit I18n.t(:update)
 h3
-  | Cancel my account
+  = I18n.t(:delete_account)
 p
-  | Unhappy?
-  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+  = button_to I18n.t(:delete), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+= link_to I18n.t(:back), :back

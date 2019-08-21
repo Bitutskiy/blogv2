@@ -1,7 +1,7 @@
 p#notice
   = notice
 h1
-  | Posts
+  = I18n.t('posts.index.title')
 table
   thead
     tr
@@ -22,10 +22,10 @@ table
         td
           = post.user.email
         td
-          = link_to 'Show', post
+          = link_to I18n.t(:show), post
         td
-          = link_to 'Edit', edit_post_path(post)
+          = link_to I18n.t(:edit), edit_post_path(post)
         td
-          = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to I18n.t(:delete), post, method: :delete, data: { confirm: 'Are you sure?' }
 br
-= link_to 'New Post', new_post_path
+= link_to I18n.t('posts.new.title'), new_post_path

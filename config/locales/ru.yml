@@ -13,16 +13,54 @@ ru:
         subscribtion: "Подписка"
         name: "Имя"
         email: "Email адрес"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "не может быть пустым"
+              taken: "уже занят"
+            password:
+              blank: "не может быть пустым"
+              too_short: "слишком короткий"
+            password_confirmation:
+              confirmation: "не прошло проверку"
+            current_password:
+              blank: "не введен"
+              invalid: "не верен"
+
+
   helpers:
     submit:
       post:
         create: "Создать"
         update: "Сохранить"
+    user:
+      subscribtion:
+        values:
+          weekly: "еженедельная"
+          daily: "ежедневная"
+          without: "отсутствует"
+
+
   posts:
     new:
       title: "Новая статья"
     edit:
       title: "Редактирование статьи"
+    index:
+      title: "Статьи"
   back: "Назад"
   edit: "Редактирование"
-  show: "Предпросмотр"
+  show: "Просмотр"
+  delete: "Удалить"
+  update: "Обновить"
+
+  login: "Войти"
+  logout: "Выйти"
+  signup: "Регистрация"
+  profile: "Профиль"
+  forgot_password: "Забыли свой пароль?"
+  empty_blank: "оставте это поле пустым если не желаете менять"
+  curr_pswd_confirm: "введите текущий пароль чтобы применить изменения"
+  delete_account: "Удалить ваш аккаунт"
