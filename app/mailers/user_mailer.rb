@@ -1,20 +1,13 @@
 class UserMailer < ApplicationMailer
 
   def signup_mail(user)
-    @user = user
-    mail to: @user.email, subject: "Signup email"
+    mail to: user.email, subject: "Signup email"
   end
 
-  def daily_mail(user, posts)
-    @user = user
-    @posts = posts
-    mail to: @user.email, subject: "Dayly digest"
-  end
-
-  def weekly_mail(user)
+  def digest_mail(user, posts, hiden)
     @user = user
     @posts = posts
-    mail to: @user.email, subject: "Weekly digest"
+    @hiden = hiden
+    mail to: @user.email, subject: "#{@user.subscribtion} digest"
   end
-
 end

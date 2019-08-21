@@ -1,0 +1,14 @@
+<p>Hello <%= @user.email %></p>
+
+<h1> <%= @user.subscribtion %> digest </h1>
+<% @posts.each do |post| %>
+     <h4>
+       <%= link_to post_url(post) do %>
+         <%= post.title %>
+       <% end %>
+     </h4>
+     <h5><%= post.body %></h5>
+<% end %>
+<% if @hiden %>
+  <div>More posts in site</div>
+<% end %>
