@@ -5,9 +5,9 @@ class UserMailerPreview < ActionMailer::Preview
     count = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).count
     hiden = count > 5
     if hiden
-      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).limit(5)
+      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).limit(5).order(created_at: :desc)
     else
-      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day)
+      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).order(created_at: :desc)
     end
     UserMailer.digest_mail(user, posts, hiden)
   end
@@ -17,9 +17,9 @@ class UserMailerPreview < ActionMailer::Preview
     count = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).count
     hiden = count > 10
     if hiden
-      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).limit(10)
+      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).limit(10).order(created_at: :desc)
     else
-      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.week)
+      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.week).order(created_at: :desc)
     end
     UserMailer.digest_mail(user, posts, hiden)
   end
@@ -29,9 +29,9 @@ class UserMailerPreview < ActionMailer::Preview
     count = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).count
     hiden = count > 5
     if hiden
-      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).limit(10)
+      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).limit(10).order(created_at: :desc)
     else
-      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day)
+      posts = Post.where('created_at <= ? AND created_at >= ?', Time.now, Time.now - 1.day).order(created_at: :desc)
     end
     UserMailer.digest_mail(user, posts, hiden)
   end

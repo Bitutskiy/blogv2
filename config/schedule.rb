@@ -24,6 +24,10 @@ env :PATH, ENV['PATH']
 set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
 
 # every :day, :at => '7am' do
-every 1.miute do
+every :day, :at => '7am' do
   runner "User.send_daily_email_to_all_users"
+end
+
+every :monday, :at => '7am' do
+  runner "User.send_weekly_email_to_all_users"
 end
