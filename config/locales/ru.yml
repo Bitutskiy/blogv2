@@ -1,0 +1,28 @@
+ru:
+  activerecord:
+    models:
+      post:
+        one: "Статья"
+        other: "Статьи"
+      user: "Пользователь"
+    attributes:
+      post:
+        title: "Заголовок"
+        body: "Содержание"
+      user:
+        subscribtion: "Подписка"
+        name: "Имя"
+        email: "Email адрес"
+  helpers:
+    submit:
+      post:
+        create: "Создать"
+        update: "Сохранить"
+  posts:
+    new:
+      title: "Новая статья"
+    edit:
+      title: "Редактирование статьи"
+  back: "Назад"
+  edit: "Редактирование"
+  show: "Предпросмотр"

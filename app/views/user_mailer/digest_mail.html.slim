@@ -3,14 +3,13 @@ p
   = @user.email
 h1
   = @user.subscribtion
-  |  digest 
-- cache do
-  - @posts.each do |post|
-    h4
-      = link_to post_url(post) do
-        = post.title
-    h5
-      = post.body
-  - if @hiden
-    div
-      | More posts in site
+  |  digest
+- @posts.each do |post|
+  h4
+    = link_to post_url(post) do
+      = post.title
+  h5
+    = post.body
+- if @hiden
+  div
+    | More posts in site

@@ -1,6 +1,5 @@
 h2
-  | Edit 
-  = resource_name.to_s.humanize
+  = t('.title', resource: resource.model_name.human)
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .filed
@@ -17,7 +16,7 @@ h2
     = f.select :subscribtion, ['weekly', 'daily', 'without']
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
-      | Currently waiting confirmation for: 
+      | Currently waiting confirmation for:
       = resource.unconfirmed_email
   .field
     = f.label :password
@@ -28,8 +27,7 @@ h2
     - if @minimum_password_length
       br
       em
-        = @minimum_password_length
-        |  characters minimum
+        = t('devise.shared.minimum_password_length', count: @minimum_password_length)
   .field
     = f.label :password_confirmation
     br
@@ -45,6 +43,6 @@ h2
 h3
   | Cancel my account
 p
-  | Unhappy? 
+  | Unhappy?
   = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
 = link_to "Back", :back
