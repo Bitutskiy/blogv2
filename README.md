@@ -12,14 +12,15 @@ Things you may want to cover:
 * Database creation
   For create database you shold execute
   ```bash
+  bunle install
   rails db:migrate
   ```
   Database incledes two tables: users and posts
 
 * Database initialization
-For creating testing values
-```bash
-  rails db:migrate
+  For creating testing values
+  ```bash
+  rails db:seed
   ```
 
 * To run the test suite
