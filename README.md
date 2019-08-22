@@ -4,8 +4,9 @@ This short description about blog
 Things you may want to cover:
 
 * Version
- * ruby 2.3.8p459
- * Rails 5.2.3
+  ruby 2.3.8p459
+  Rails 5.2.3
+  
 * Configuration
   version = 1.0.0
 
