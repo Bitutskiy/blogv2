@@ -1,31 +1,30 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This short description about blog
 
 Things you may want to cover:
 
-* Ruby version
-ruby 2.3.8p459
-Rails 5.2.3
+* Version
+ * ruby 2.3.8p459
+ * Rails 5.2.3
 * Configuration
   version = 1.0.0
 
 * Database creation
-  For create database you shold
-  code block
-  ```
-
+  For create database you shold execute
   ```bash
   rails db:migrate
   ```
   Database incledes two tables: users and posts
 
 * Database initialization
+For creating testing values
+```bash
+  rails db:migrate
+  ```
 
-* How to run the test suite
-  rails
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* To run the test suite
+  ```bash
+  rails test -d /tests/
+  ```
+* Using database
+SQLite3
