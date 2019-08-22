@@ -17,3 +17,7 @@ end
 5.times do |i|
   User.create(email: "test#{i+10}@test#{i+10}.com", password:"123456", subscribtion:"without")
 end
+
+10.times do |i|
+  Post.create(title: "Post##{i}", body:"Post##{i} Post##{i} Post##{i} Post##{i} Post##{i}", user_id: 1, created_at:"2019-08-2#{i} 02:22:43.178640")
+end
