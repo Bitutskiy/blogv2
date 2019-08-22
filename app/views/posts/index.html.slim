@@ -5,7 +5,7 @@ p#notice
       = I18n.t('posts.index.title')
     - @posts.each do |post|
       small
-        = post.created_at.strftime("%H:%M %d %B, %Y")
+        = post.created_at.strftime("%H:%M %d.%m.%Y")
         |   |
         = link_to I18n.t(:edit), edit_post_path(post)
         |   |
