@@ -37,6 +37,7 @@ gem 'devise'
 gem 'whenever', require: false
 gem 'slim-rails'
 gem 'devise-i18n'
+gem 'bootstrap'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

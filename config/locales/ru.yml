@@ -15,6 +15,13 @@ ru:
         email: "Email адрес"
     errors:
       models:
+        post:
+          attributes:
+            title:
+              blank: "не может быть пустым"
+            body:
+              blank: "не может быть пустым"
+          errors: " ошибкa(и) возникла при сохранении:"
         user:
           attributes:
             email:
@@ -64,3 +71,4 @@ ru:
   empty_blank: "оставте это поле пустым если не желаете менять"
   curr_pswd_confirm: "введите текущий пароль чтобы применить изменения"
   delete_account: "Удалить ваш аккаунт"
+  confirm: "Вы уверены?"
